@@ -19,7 +19,7 @@ if (isset($_GET['page']) == false) {
 if ($halaman == "pages/welcome") {
     $sub_title = "Welcome";
     $title = "Home";
-} elseif ($halaman == "pages/tabel" || $halaman == "pages/bin") {
+} elseif ($halaman == "pages/tabel" || $halaman == "pages/bin" || $halaman == "pages/tabel_olahraga" || $halaman == "pages/bin_olahraga" || $halaman == "pages/tabel_kombinasi") {
     $sub_title = "Tabel";
     $title = $sub_title;
 } elseif ($halaman == "pages/utama" || $halaman == "pages/kedua") {
@@ -65,7 +65,7 @@ if ($halaman == "pages/welcome") {
         Tip 2: you can also add an image using data-image tag
     -->
             <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                    Your Logo
+                    KalorMan
                 </a></div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
@@ -90,7 +90,7 @@ if ($halaman == "pages/welcome") {
                             <p>Input</p>
                         </a> -->
                     </li>
-                    <li class="nav-item <?php if ($halaman == "pages/tabel" || $halaman == "pages/tabel_olahraga" || $halaman == "pages/tabel_kombinasi" || $halaman == "pages/bin") {
+                    <li class="nav-item <?php if ($halaman == "pages/tabel" || $halaman == "pages/tabel_olahraga" || $halaman == "pages/tabel_kombinasi" || $halaman == "pages/bin" || $halaman == "pages/bin_olahraga") {
                                             echo "active";
                                         } ?> ">
                         <a class="nav-link" href="?page=tabel">
@@ -127,9 +127,10 @@ if ($halaman == "pages/welcome") {
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="?page=tabel">Tabel Kalori</a>
-                                <a class="dropdown-item" href="?page=404">Tabel Olahraga</a>
-                                <a class="dropdown-item" href="?page=404">Tabel Kombinasi</a>
-                                <a class="dropdown-item" href="?page=bin">Tabel Bin</a>
+                                <a class="dropdown-item" href="?page=tabel_olahraga">Tabel Olahraga</a>
+                                <a class="dropdown-item" href="?page=tabel_kombinasi">Tabel Kombinasi</a>
+                                <a class="dropdown-item" href="?page=bin">Tabel Bin Kalori</a>
+                                <a class="dropdown-item" href="?page=bin_olahraga">Tabel Bin Olahraga</a>
                             </div>
                         <?php } elseif ($title == "Not Found") { ?>
                             <a class="navbar-brand" href="?page=welcome"><?php echo $sub_title ?></a>

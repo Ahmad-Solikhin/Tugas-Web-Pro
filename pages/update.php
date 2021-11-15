@@ -27,6 +27,27 @@ if (isset($_GET['stat'])) {
 
         redirect('?page=tabel');
     } elseif ($stat == 2) {
-        echo "Harus Login";
+        $id_olahraga = $_GET['id_olahraga'];
+
+        $waktu_olahraga = $_POST['waktu_olahraga'];
+        $nama_olahraga = $_POST['nama_olahraga'];
+        $kalori_olahraga = $_POST['kalori_olahraga'];
+        $waktu = $_POST['waktu'];
+        $tanggal = date('Y-m-d', strtotime($_POST['tanggal']));
+
+
+        $data = [
+            'waktu_olahraga' => $waktu_olahraga,
+            'nama_olahraga' => $nama_olahraga,
+            'kalori_olahraga' => $kalori_olahraga,
+            'waktu' => $waktu,
+            'tanggal' => $tanggal
+        ];
+
+        update_data($connection, "olahraga", $data, $id_olahraga, "id_olahraga");
+
+        redirect('?page=tabel_olahraga');
+    } else {
+        echo "Error";
     }
 }

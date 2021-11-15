@@ -17,6 +17,17 @@ if (isset($_GET['stat'])) {
 
         redirect('?page=bin');
     } elseif ($stat == 2) {
-        echo "Harus Login";
+        $id_olahraga = $_GET['id_olahraga'];
+
+
+        $data = [
+            'delete_stat' => 0
+        ];
+
+        update_data($connection, "olahraga", $data, $id_olahraga, "id_olahraga");
+
+        redirect('?page=bin_olahraga');
+    } else {
+        echo "Error";
     }
 }

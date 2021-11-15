@@ -10,8 +10,8 @@ if (defined("GELANG") === false) {
         <div class="mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Waktu</label>
             <div class="col">
-                <select name="jenis_makanan" class="form-select" aria-label="Default select example">
-                    <option selected>--Pilih Jenis--</option>
+                <select name="waktu_olahraga" class="form-select" aria-label="Default select example">
+                    <option selected>--Pilih Waktu--</option>
                     <option value="Pagi">Pagi</option>
                     <option value="Siang">Siang</option>
                     <option value="Sore">Sore</option>
@@ -20,15 +20,15 @@ if (defined("GELANG") === false) {
             </div>
         </div>
         <div class="mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Jenis Olahraga</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Olahraga</label>
             <div class="col">
-                <input type="text" name="nama_makanan" class="form-control">
+                <input type="text" name="nama_olahraga" class="form-control">
             </div>
         </div>
         <div class="mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Kalori Terbakar</label>
             <div class="col">
-                <input type="text" name="kalori_makanan" class="form-control" placeholder="Kal">
+                <input type="text" name="kalori_olahraga" class="form-control" placeholder="Kal">
             </div>
         </div>
         <div class="mb-3">
