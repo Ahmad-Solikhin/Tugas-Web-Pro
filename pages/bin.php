@@ -43,7 +43,7 @@ if ($coba != null) {
                 $no++;
             ?>
                 <td style="text-align: center;">
-                    <a href="?page=kalori_restore&id_data=<?php echo $row['id_data'] ?>" class="btn btn-info btn-sm">Restore</a>
+                    <a href="?page=restore&id_data=<?php echo $row['id_data'] ?>&stat=1" class="btn btn-info btn-sm">Restore</a>
                 </td>
                 </tr>
         <?php

@@ -28,7 +28,7 @@ if ($halaman == "pages/welcome") {
 } elseif ($halaman == "pages/akun") {
     $sub_title = "Akun";
     $title = $sub_title;
-} elseif ($halaman == "pages/kalori_edit") {
+} elseif ($halaman == "pages/edit") {
     $sub_title = "Edit Data";
     $title = $sub_title;
 } elseif ($halaman == "pages/404") {

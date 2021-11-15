@@ -5,7 +5,7 @@ if (defined("GELANG") === false) {
 ?>
 
 <h1 class="judul">From Input Kalori</h1>
-<form action="?page=kalori_save" method="POST">
+<form action="?page=save&stat=1" method="POST">
     <div class="content">
         <div class="mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Jenis Waktu</label>

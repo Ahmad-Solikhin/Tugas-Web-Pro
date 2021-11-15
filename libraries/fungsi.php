@@ -27,6 +27,13 @@ function update_data($koneksi, $nama_tabel, $data, $id, $pri)
     mysqli_query($koneksi, $sql);
 }
 
+function filter_data($text)
+{
+    $text = addslashes($text);
+    $text = htmlspecialchars($text);
+
+    return $text;
+}
 
 function redirect($page)
 {

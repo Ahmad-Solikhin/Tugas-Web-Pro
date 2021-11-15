@@ -36,8 +36,8 @@ if (defined("GELANG") === false) {
             $no++;
         ?>
             <td style="text-align: center;">
-                <a href="?page=kalori_edit&id_data=<?php echo $row['id_data'] ?>" class="btn btn-info btn-sm">Edit</a>
-                <a href="?page=kalori_delete&id_data=<?php echo $row['id_data'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                <a href="?page=edit&id_data=<?php echo $row['id_data'] ?>&stat=1" class="btn btn-info btn-sm">Edit</a>
+                <a href="?page=delete&id_data=<?php echo $row['id_data'] ?>&stat=1" class="btn btn-danger btn-sm">Hapus</a>
             </td>
             </tr>
         <?php } ?>
