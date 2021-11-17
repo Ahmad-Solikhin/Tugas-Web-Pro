@@ -1,5 +1,11 @@
-.judul {
+.profil {
   text-align: center;
   color: white;
+  padding-bottom: 10px;
+}
+
+.judul {
+  text-align: center;
+  color: blue;
   padding-bottom: 10px;
 }
