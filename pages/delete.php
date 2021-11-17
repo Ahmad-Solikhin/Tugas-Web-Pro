@@ -28,6 +28,6 @@ if (isset($_GET['stat'])) {
 
         redirect('?page=tabel_olahraga');
     } else {
-        echo "Error";
+        redirect('?page=404');
     }
 }

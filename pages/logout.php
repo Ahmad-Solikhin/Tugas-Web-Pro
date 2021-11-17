@@ -3,6 +3,6 @@ if (defined("GELANG") === false) {
     die("Anda tidak berhak membuka file ini secara langsung");
 }
 
-?>
+session_destroy();
 
-<h1 class="judul">Selamat Datang <?php echo $_SESSION['nm_user']; ?></h1>
+redirect('?page=login&msg=1');

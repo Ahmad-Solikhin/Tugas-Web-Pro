@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -8,32 +9,41 @@ require_once "libraries/connect.php";
 require_once "libraries/fungsi.php";
 
 if (isset($_GET['page']) == false) {
-    $halaman = "pages/welcome";
+    $halaman = "welcome";
 } else {
-    $halaman = "pages/" . $_GET['page'];
-
-    if (file_exists($halaman . ".php") == false) {
-        $halaman = "pages/404";
-    }
+    $halaman = $_GET['page'];
 }
-if ($halaman == "pages/welcome") {
+
+$file_to_open = "pages/" . $halaman;
+
+if (file_exists($file_to_open . ".php") == false) {
+    $file_to_open = "pages/404";
+}
+
+if ($file_to_open == "pages/welcome") {
     $sub_title = "Welcome";
     $title = "Home";
-} elseif ($halaman == "pages/tabel" || $halaman == "pages/bin" || $halaman == "pages/tabel_olahraga" || $halaman == "pages/bin_olahraga" || $halaman == "pages/tabel_kombinasi") {
+} elseif ($file_to_open == "pages/tabel" || $file_to_open == "pages/bin" || $file_to_open == "pages/tabel_olahraga" || $file_to_open == "pages/bin_olahraga" || $file_to_open == "pages/tabel_kombinasi") {
     $sub_title = "Tabel";
     $title = $sub_title;
-} elseif ($halaman == "pages/utama" || $halaman == "pages/kedua") {
+} elseif ($file_to_open == "pages/utama" || $file_to_open == "pages/kedua") {
     $sub_title = "Input";
     $title = $sub_title;
-} elseif ($halaman == "pages/akun") {
+} elseif ($file_to_open == "pages/akun") {
     $sub_title = "Akun";
     $title = $sub_title;
-} elseif ($halaman == "pages/edit") {
+} elseif ($file_to_open == "pages/edit") {
     $sub_title = "Edit Data";
     $title = $sub_title;
-} elseif ($halaman == "pages/404") {
+} elseif ($file_to_open == "pages/404") {
     $sub_title = "Back Home";
     $title = "Not Found";
+} elseif ($file_to_open == "pages/login") {
+    $sub_title = "Login";
+    $title = $sub_title;
+} elseif ($file_to_open == "pages/signup") {
+    $sub_title = "Sign Up";
+    $title = $sub_title;
 }
 ?>
 
@@ -53,7 +63,7 @@ if ($halaman == "pages/welcome") {
     <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/demo/demo.css" rel="stylesheet" />
-    <link href="assets/css/tambahan.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="dark-edition">
@@ -69,7 +79,7 @@ if ($halaman == "pages/welcome") {
                 </a></div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item <?php if ($halaman == "pages/welcome") {
+                    <li class="nav-item <?php if ($file_to_open == "pages/welcome") {
                                             echo "active";
                                         } ?> ">
                         <a class="nav-link" href="index.php">
@@ -77,7 +87,7 @@ if ($halaman == "pages/welcome") {
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item <?php if ($halaman == "pages/utama" || $halaman == "pages/kedua") {
+                    <li class="nav-item <?php if ($file_to_open == "pages/utama" || $file_to_open == "pages/kedua") {
                                             echo "active";
                                         } ?> ">
                         <a class="nav-link" href="?page=utama">
@@ -90,7 +100,7 @@ if ($halaman == "pages/welcome") {
                             <p>Input</p>
                         </a> -->
                     </li>
-                    <li class="nav-item <?php if ($halaman == "pages/tabel" || $halaman == "pages/tabel_olahraga" || $halaman == "pages/tabel_kombinasi" || $halaman == "pages/bin" || $halaman == "pages/bin_olahraga") {
+                    <li class="nav-item <?php if ($file_to_open == "pages/tabel" || $file_to_open == "pages/tabel_olahraga" || $file_to_open == "pages/tabel_kombinasi" || $file_to_open == "pages/bin" || $file_to_open == "pages/bin_olahraga") {
                                             echo "active";
                                         } ?> ">
                         <a class="nav-link" href="?page=tabel">
@@ -135,7 +145,7 @@ if ($halaman == "pages/welcome") {
                         <?php } elseif ($title == "Not Found") { ?>
                             <a class="navbar-brand" href="?page=welcome"><?php echo $sub_title ?></a>
                         <?php } else { ?>
-                            <a class="navbar-brand" href="<?php $halaman . ".php" ?>"><?php echo $title ?></a>
+                            <a class="navbar-brand" href="<?php $file_to_open . ".php" ?>"><?php echo $title ?></a>
                         <?php } ?>
 
 
@@ -150,12 +160,18 @@ if ($halaman == "pages/welcome") {
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="?page=akun">
+                                <a class="navbar-brand nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">person</i>
                                     <p class="d-lg-none d-md-block">
                                         Account
                                     </p>
                                 </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="?page=login">Log In</a>
+                                    <a class="dropdown-item" href="?page=signup">Sign Up</a>
+                                    <a class="dropdown-item" href="?page=akun">Profile</a>
+                                    <a class="dropdown-item" href="?page=logout">Logout</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -165,7 +181,7 @@ if ($halaman == "pages/welcome") {
             <div class="content">
                 <div class="container-fluid">
                     <?php
-                    include $halaman . ".php";
+                    include $file_to_open . ".php";
                     ?>
                 </div>
             </div>

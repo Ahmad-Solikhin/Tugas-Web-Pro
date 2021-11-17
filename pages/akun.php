@@ -4,5 +4,59 @@ if (defined("GELANG") === false) {
 }
 
 ?>
-
-<h1 class="judul">Selamat Datang BRO</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-11">
+            <h1 class="judul">Selamat Datang BRO</h1>
+        </div>
+        <div class="col col-1"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
+            <p class="profil-title">Nama</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['nm_user']; ?></p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
+            <p class="profil-title">Username</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['username']; ?></p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
+            <p class="profil-title">Usia</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['usia']; ?> Tahun</p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
+            <p class="profil-title">Berat Badan</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['berat_badan']; ?> KG</p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
+            <a href="?page=edit&stat=3" class="btn btn-info btn-sm">Edit profil</a>
+        </div>
+        <div class="col col-7"></div>
+    </div>
+</div>

@@ -3,12 +3,13 @@ if (defined("GELANG") === false) {
     die("Anda tidak berhak membuka file ini secara langsung");
 }
 ?>
-<h1 class="judul">Edit Data</h1>
+
 <?php
 
 if (isset($_GET['stat'])) {
     $stat = $_GET['stat'];
     if ($stat == 1) {
+        echo '<h1 class="judul">Edit Data</h1>';
         $id_data = $_GET['id_data'];
         $sql = "select * from data where id_data=$id_data";
         $result = mysqli_query($connection, $sql);
@@ -63,6 +64,7 @@ if (isset($_GET['stat'])) {
         </form>
     <?php
     } elseif ($stat == 2) {
+        echo '<h1 class="judul">Edit Data</h1>';
         $id_olahraga = $_GET['id_olahraga'];
         $sql = "select * from olahraga where id_olahraga=$id_olahraga";
         $result = mysqli_query($connection, $sql);
@@ -116,6 +118,11 @@ if (isset($_GET['stat'])) {
             </div>
         </form>
 <?php
+    } elseif ($stat == 3) {
+        echo '<h1 class="judul">Edit Data</h1>';
+        echo "Edit Profile";
+    } else {
+        redirect('?page=404');;
     }
 }
 ?>

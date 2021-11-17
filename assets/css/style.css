@@ -1,11 +1,15 @@
-.profil {
-  text-align: center;
+.profil-title {
   color: white;
   padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.profile-child {
+  color: white;
 }
 
 .judul {
   text-align: center;
-  color: blue;
+  color: white;
   padding-bottom: 10px;
 }
