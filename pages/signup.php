@@ -16,8 +16,12 @@ if (defined("GELANG") === false) {
                 $err = $_GET['err'];
                 if ($err == 1) {
                     echo "<div class='alert alert-danger'>Password tidak sama</div>";
-                } else if ($err == 2) {
-                    echo "<div class='alert alert-danger'>Gunakan minimal 1 angka</div>";
+                } elseif ($err == 2) {
+                    echo "<div class='alert alert-danger'>Password kurang dari 8 karakter</div>";
+                } elseif ($err == 3) {
+                    echo "<div class='alert alert-danger'>Password harus mengandung huruf dan angka</div>";
+                } elseif ($err == 4) {
+                    echo "<div class='alert alert-danger'>Username sudah digunakan</div>";
                 }
             }
             ?>

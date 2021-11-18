@@ -20,6 +20,15 @@ if (file_exists($file_to_open . ".php") == false) {
     $file_to_open = "pages/404";
 }
 
+$unprotected_page = ['login', 'login_proses', 'signup', 'signup_proses', 'about_us'];
+
+if (in_array($halaman, $unprotected_page) == false) {
+    //cek apakah sudah login
+    if (isset($_SESSION['nm_user']) == false) {
+        redirect("?page=login&err=2");
+    }
+}
+
 if ($file_to_open == "pages/welcome") {
     $sub_title = "Welcome";
     $title = "Home";
@@ -43,6 +52,9 @@ if ($file_to_open == "pages/welcome") {
     $title = $sub_title;
 } elseif ($file_to_open == "pages/signup") {
     $sub_title = "Sign Up";
+    $title = $sub_title;
+} elseif ($file_to_open == "pages/about_us") {
+    $sub_title = "About Us";
     $title = $sub_title;
 }
 ?>
@@ -74,49 +86,54 @@ if ($file_to_open == "pages/welcome") {
 
         Tip 2: you can also add an image using data-image tag
     -->
-            <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
                     KalorMan
-                </a></div>
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <li class="nav-item <?php if ($file_to_open == "pages/welcome") {
-                                            echo "active";
-                                        } ?> ">
-                        <a class="nav-link" href="index.php">
-                            <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li class="nav-item <?php if ($file_to_open == "pages/utama" || $file_to_open == "pages/kedua") {
-                                            echo "active";
-                                        } ?> ">
-                        <a class="nav-link" href="?page=utama">
-                            <i class="material-icons">person</i>
-                            <p>Input</p>
-                        </a>
+                </a>
+            </div>
+            <?php if (isset($_SESSION['nm_user'])) : ?>
+                <div class="sidebar-wrapper">
+                    <ul class="nav">
+                        <li class="nav-item <?php if ($file_to_open == "pages/welcome") {
+                                                echo "active";
+                                            } ?> ">
+                            <a class="nav-link" href="?page=welcome">
+                                <i class="material-icons">dashboard</i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item <?php if ($file_to_open == "pages/utama" || $file_to_open == "pages/kedua") {
+                                                echo "active";
+                                            } ?> ">
+                            <a class="nav-link" href="?page=utama">
+                                <i class="material-icons">person</i>
+                                <p>Input</p>
+                            </a>
 
-                        <!-- <a class="nav-link" href="?page=utama">
+                            <!-- <a class="nav-link" href="?page=utama">
                             <i class="material-icons">person</i>
                             <p>Input</p>
                         </a> -->
-                    </li>
-                    <li class="nav-item <?php if ($file_to_open == "pages/tabel" || $file_to_open == "pages/tabel_olahraga" || $file_to_open == "pages/tabel_kombinasi" || $file_to_open == "pages/bin" || $file_to_open == "pages/bin_olahraga") {
-                                            echo "active";
-                                        } ?> ">
-                        <a class="nav-link" href="?page=tabel">
-                            <i class="material-icons">content_paste</i>
-                            <p>Table</p>
-                        </a>
-                    </li>
+                        </li>
+                        <li class="nav-item <?php if ($file_to_open == "pages/tabel" || $file_to_open == "pages/tabel_olahraga" || $file_to_open == "pages/tabel_kombinasi" || $file_to_open == "pages/bin" || $file_to_open == "pages/bin_olahraga") {
+                                                echo "active";
+                                            } ?> ">
+                            <a class="nav-link" href="?page=tabel">
+                                <i class="material-icons">content_paste</i>
+                                <p>Table</p>
+                            </a>
+                        </li>
 
-                    <!-- <li class="nav-item active-pro ">
+                        <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
                     <p>Upgrade to PRO</p>
                 </a>
             </li> -->
-                </ul>
-            </div>
+                    </ul>
+                </div>
+
+            <?php endif; ?>
         </div>
         <div class="main-panel">
             <!-- Navbar -->
@@ -167,10 +184,17 @@ if ($file_to_open == "pages/welcome") {
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="?page=login">Log In</a>
-                                    <a class="dropdown-item" href="?page=signup">Sign Up</a>
-                                    <a class="dropdown-item" href="?page=akun">Profile</a>
-                                    <a class="dropdown-item" href="?page=logout">Logout</a>
+                                    <?php
+                                    if (isset($_SESSION['nm_user'])) {
+                                        // halaman yang bisa diakses saat sudah login
+                                        echo '<a class="dropdown-item" href="?page=akun">Profile</a>';
+                                        echo '<a class="dropdown-item" href="?page=logout">Logout</a>';
+                                    } else {
+                                        // halaman yang bisa diakses saat belum login
+                                        echo '<a class="dropdown-item" href="?page=login">Log In</a>';
+                                        echo '<a class="dropdown-item" href="?page=signup">Sign Up</a>';
+                                    }
+                                    ?>
                                 </div>
                             </li>
                         </ul>
@@ -190,30 +214,15 @@ if ($file_to_open == "pages/welcome") {
                     <nav class="float-left">
                         <ul>
                             <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://creative-tim.com/presentation">
+                                <a href="?page=about_us">
                                     About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.creative-tim.com/license">
-                                    Licenses
                                 </a>
                             </li>
                         </ul>
                     </nav>
                     <div class="copyright float-right" id="date">
                         , made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                        <a href="https://www.creative-tim.com" target="_blank"> Kelompok 5</a>
                     </div>
                 </div>
             </footer>

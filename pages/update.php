@@ -47,7 +47,30 @@ if (isset($_GET['stat'])) {
         update_data($connection, "olahraga", $data, $id_olahraga, "id_olahraga");
 
         redirect('?page=tabel_olahraga');
+    } elseif ($stat == 3) {
+        session_destroy();
+        $id_user = $_GET['id_user'];
+
+        $nm_user = filter_data($_POST['nm_user']);
+        $user_username = filter_data($_POST['user_username']);
+        $usia = filter_data($_POST['usia']);
+        $berat_badan = filter_data($_POST['berat_badan']);
+        date_default_timezone_set('Asia/Jakarta');
+        $waktu = date("Y-m-d H:i:s");
+
+
+        $data = [
+            'nm_user' => $nm_user,
+            'user_username' => $user_username,
+            'usia' => $usia,
+            'berat_badan' => $berat_badan,
+            'update_at' => $waktu
+        ];
+
+        update_data($connection, "user", $data, $id_user, "id_user");
+
+        redirect("?page=login_proses&id_user=$id_user&stat=2");
     } else {
-        echo "Error";
+        redirect("?page=404");
     }
 }

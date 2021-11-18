@@ -5,4 +5,4 @@ if (defined("GELANG") === false) {
 
 ?>
 
-<h1 class="judul">Selamat Datang <?php echo $_SESSION['nm_user']; ?></h1>
+<h1 class="judul">Selamat Datang <?php echo "<b>" . $_SESSION['nm_user'] . "</b>"; ?> Website<b> KALORMAN</b></h1>

@@ -30,7 +30,7 @@ if (defined("GELANG") === false) {
                 }
             }
             ?>
-            <form action="?page=login_proses" method="POST">
+            <form action="?page=login_proses&stat=1" method="POST">
                 <div class="content">
                     <div class="mb-3">
                         <label class="form-label">Username</label>

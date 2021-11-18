@@ -9,7 +9,6 @@ function insert_data($koneksi, $nama_tabel, $data)
     }
 
     $sql = "INSERT INTO " . $nama_tabel . " (" . implode(',', $col) . ") VALUES (" . implode(',', $val) . ")";
-    echo $sql;
     mysqli_query($koneksi, $sql);
 }
 

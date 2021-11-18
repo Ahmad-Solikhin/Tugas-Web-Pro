@@ -8,6 +8,14 @@ if (defined("GELANG") === false) {
     <div class="row">
         <div class="col col-11">
             <h1 class="judul">Selamat Datang BRO</h1>
+            <?php
+            if (isset($_GET['err'])) {
+                $err = $_GET['err'];
+                if ($err == 1) {
+                    echo "<div class='alert alert-danger' style='text-align: center;'>Edit gagal</div>";
+                }
+            }
+            ?>
         </div>
         <div class="col col-1"></div>
     </div>
@@ -55,7 +63,7 @@ if (defined("GELANG") === false) {
     <div class="row">
         <div class="col col-4"></div>
         <div class="col col-1">
-            <a href="?page=edit&stat=3" class="btn btn-info btn-sm">Edit profil</a>
+            <a href="?page=edit&stat=3&id_user=<?php echo $_SESSION['id_user']; ?>" class="btn btn-info btn-sm">Edit profil</a>
         </div>
         <div class="col col-7"></div>
     </div>
