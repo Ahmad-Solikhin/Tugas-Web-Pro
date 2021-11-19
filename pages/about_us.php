@@ -14,8 +14,8 @@ if (defined("GELANG") === false) {
     </div>
     <div class="row about-us">
         <div class="col-2"></div>
-        <div class="col-4">Ahmad Solikhin Gayuh Raharjo</div>
-        <div class="col-4">Nama 2</div>
+        <div class="col-4">Ahmad</div>
+        <div class="col-4">Solikhin</div>
         <div class="col-2"></div>
     </div>
     <div class="row about-us">
@@ -31,8 +31,8 @@ if (defined("GELANG") === false) {
         <div class="col-4">Foto 5</div>
     </div>
     <div class="row about-us">
-        <div class="col-4">Nama 3</div>
-        <div class="col-4">Nama 4</div>
+        <div class="col-4">Gayuh</div>
+        <div class="col-4">Raharjo</div>
         <div class="col-4">Nama 5</div>
     </div>
     <div class="row about-us">

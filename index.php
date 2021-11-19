@@ -9,7 +9,7 @@ require_once "libraries/connect.php";
 require_once "libraries/fungsi.php";
 
 if (isset($_GET['page']) == false) {
-    $halaman = "welcome";
+    $halaman = "login";
 } else {
     $halaman = $_GET['page'];
 }
@@ -55,6 +55,9 @@ if ($file_to_open == "pages/welcome") {
     $title = $sub_title;
 } elseif ($file_to_open == "pages/about_us") {
     $sub_title = "About Us";
+    $title = $sub_title;
+} elseif ($file_to_open == "pages/premium") {
+    $sub_title = "Perhitungan";
     $title = $sub_title;
 }
 ?>
@@ -121,6 +124,14 @@ if ($file_to_open == "pages/welcome") {
                             <a class="nav-link" href="?page=tabel">
                                 <i class="material-icons">content_paste</i>
                                 <p>Table</p>
+                            </a>
+                        </li>
+                        <li class="nav-item <?php if ($file_to_open == "pages/premium") {
+                                                echo "active";
+                                            } ?> ">
+                            <a class="nav-link" href="?page=premium">
+                                <i class="material-icons">unarchive</i>
+                                <p>Perhitungan</p>
                             </a>
                         </li>
 
