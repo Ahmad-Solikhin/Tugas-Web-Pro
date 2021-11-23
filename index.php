@@ -20,7 +20,14 @@ if (file_exists($file_to_open . ".php") == false) {
     $file_to_open = "pages/404";
 }
 
-$unprotected_page = ['login', 'login_proses', 'signup', 'signup_proses', 'about_us'];
+$unprotected_page = ['login', 'login_proses', 'signup', 'signup_proses', 'about_us', '404', '403'];
+$premium_page = ['bin', 'bin_olahraga', 'premium'];
+
+if (in_array($halaman, $premium_page) == true) {
+    if ($_SESSION['id_role'] == 1) {
+        redirect("?page=403");
+    }
+}
 
 if (in_array($halaman, $unprotected_page) == false) {
     //cek apakah sudah login
@@ -47,6 +54,9 @@ if ($file_to_open == "pages/welcome") {
 } elseif ($file_to_open == "pages/404") {
     $sub_title = "Back Home";
     $title = "Not Found";
+} elseif ($file_to_open == "pages/403") {
+    $sub_title = "Back Home";
+    $title = "Not Permited";
 } elseif ($file_to_open == "pages/login") {
     $sub_title = "Login";
     $title = $sub_title;
@@ -60,6 +70,8 @@ if ($file_to_open == "pages/welcome") {
     $sub_title = "Perhitungan";
     $title = $sub_title;
 }
+
+
 ?>
 
 <head>
@@ -94,7 +106,13 @@ if ($file_to_open == "pages/welcome") {
                     KalorMan
                 </a>
             </div>
-            <?php if (isset($_SESSION['nm_user'])) : ?>
+
+            <?php
+            if (isset($_SESSION['nm_user'])) :
+                $is_allow_restore = cek_akses($connection, $_SESSION['id_role'], 'restore');
+                $sql = "SELECT * FROM modul_role AS mr JOIN modul as m ON mr.id_modul=m.id_modul WHERE mr.id_role=" . $_SESSION['id_role'] . " AND mr.deleted_at IS NULL AND mr.is_count=1";
+                $result = mysqli_query($connection, $sql);
+            ?>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
                         <li class="nav-item <?php if ($file_to_open == "pages/welcome") {
@@ -126,14 +144,17 @@ if ($file_to_open == "pages/welcome") {
                                 <p>Table</p>
                             </a>
                         </li>
-                        <li class="nav-item <?php if ($file_to_open == "pages/premium") {
-                                                echo "active";
-                                            } ?> ">
-                            <a class="nav-link" href="?page=premium">
-                                <i class="material-icons">unarchive</i>
-                                <p>Perhitungan</p>
-                            </a>
-                        </li>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <li class="nav-item <?php if ($file_to_open == "pages/premium") {
+                                                    echo "active";
+                                                } ?> ">
+                                <a class="nav-link" href="?page=<?php echo $row['nm_modul']; ?>">
+                                    <i class="material-icons"><?php echo $row['icon_modul']; ?></i>
+                                    <p><?php echo $row['judul_modul']; ?></p>
+                                </a>
+                            </li>
+                        <?php } ?>
 
                         <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
@@ -167,10 +188,14 @@ if ($file_to_open == "pages/welcome") {
                                 <a class="dropdown-item" href="?page=tabel">Tabel Kalori</a>
                                 <a class="dropdown-item" href="?page=tabel_olahraga">Tabel Olahraga</a>
                                 <a class="dropdown-item" href="?page=tabel_kombinasi">Tabel Kombinasi</a>
-                                <a class="dropdown-item" href="?page=bin">Tabel Bin Kalori</a>
-                                <a class="dropdown-item" href="?page=bin_olahraga">Tabel Bin Olahraga</a>
+                                <?php if ($is_allow_restore) : ?>
+                                    <a class="dropdown-item" href="?page=bin">Tabel Bin Kalori</a>
+                                    <a class="dropdown-item" href="?page=bin_olahraga">Tabel Bin Olahraga</a>
+                                <?php endif; ?>
                             </div>
                         <?php } elseif ($title == "Not Found") { ?>
+                            <a class="navbar-brand" href="?page=welcome"><?php echo $sub_title ?></a>
+                        <?php } elseif ($title == "Not Permited") { ?>
                             <a class="navbar-brand" href="?page=welcome"><?php echo $sub_title ?></a>
                         <?php } else { ?>
                             <a class="navbar-brand" href="<?php $file_to_open . ".php" ?>"><?php echo $title ?></a>

@@ -1,4 +1,17 @@
 <?php
+function cek_akses($koneksi, $id_role, $action)
+{
+    $sql = "SELECT * FROM modul_role WHERE id_role=$id_role AND is_$action=1 AND deleted_at IS NULL";
+    $result = mysqli_query($koneksi, $sql);
+
+    $num = mysqli_num_rows($result);
+    if ($num > 0) {
+        //ada
+        return true;
+    }
+    return false;
+}
+
 function insert_data($koneksi, $nama_tabel, $data)
 {
     $col = [];

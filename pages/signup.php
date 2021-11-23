@@ -40,6 +40,16 @@ if (defined("GELANG") === false) {
                         </div>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Subscription</label>
+                        <div class="col">
+                            <select name="id_role" class="form-select" aria-label="Default select example">
+                                <option selected>--Pilih Subscription--</option>
+                                <option value="1">Biasa</option>
+                                <option value="2">Premium</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Password</label>
                         <div class="col">
                             <input type="password" class="form-control" name="password" autocomplete="off" />

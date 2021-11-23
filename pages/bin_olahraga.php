@@ -9,7 +9,7 @@ $hasil = mysqli_query($connection, $sql);
 $coba = mysqli_fetch_assoc($hasil);
 
 if ($coba != null) {
-
+    $is_allow = cek_akses($connection, $_SESSION['id_role'], 'restore');
 
 ?>
     <h1 class="judul">Tabel Bin Olahraga</h1>
@@ -22,7 +22,9 @@ if ($coba != null) {
                 <th>Kalori Terbakar</th>
                 <th>Jam Olahraga</th>
                 <th>Tanggal</th>
-                <th class="text-center">Aksi</th>
+                <?php if ($is_allow) : ?>
+                    <th class="text-center">Aksi</th>
+                <?php endif; ?>
             </tr>
 
             <?php
@@ -42,9 +44,11 @@ if ($coba != null) {
                 $total += $row['kalori_olahraga'];
                 $no++;
             ?>
-                <td style="text-align: center;">
-                    <a href="?page=restore&id_olahraga=<?php echo $row['id_olahraga'] ?>&stat=2" class="btn btn-info btn-sm">Restore</a>
-                </td>
+                <?php if ($is_allow) : ?>
+                    <td style="text-align: center;">
+                        <a href="?page=restore&id_olahraga=<?php echo $row['id_olahraga'] ?>&stat=2" class="btn btn-info btn-sm">Restore</a>
+                    </td>
+                <?php endif; ?>
                 </tr>
         <?php
             }

@@ -28,6 +28,14 @@ if (isset($_GET['stat'])) {
             $_SESSION['username'] = $row['user_username'];
             $_SESSION['usia'] = $row['usia'];
             $_SESSION['berat_badan'] = $row['berat_badan'];
+            $_SESSION['id_role'] = $row['id_role'];
+
+            $sql = "SELECT * FROM role WHERE id_role=" . $row['id_role'] . " AND deleted_at IS NULL";
+            $result = mysqli_query($connection, $sql);
+
+            $role = mysqli_fetch_assoc($result);
+            $_SESSION['nm_role'] = $role['nm_role'];
+
 
             redirect("?page=welcome");
         } else {
@@ -53,6 +61,13 @@ if (isset($_GET['stat'])) {
             $_SESSION['username'] = $row['user_username'];
             $_SESSION['usia'] = $row['usia'];
             $_SESSION['berat_badan'] = $row['berat_badan'];
+            $_SESSION['id_role'] = $row['id_role'];
+
+            $sql = "SELECT * FROM role WHERE id_role=" . $row['id_role'] . " AND deleted_at IS NULL";
+            $result = mysqli_query($connection, $sql);
+
+            $role = mysqli_fetch_assoc($result);
+            $_SESSION['nm_role'] = $role['nm_role'];
 
             redirect("?page=akun");
         } else {

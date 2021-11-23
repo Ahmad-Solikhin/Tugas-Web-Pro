@@ -63,6 +63,16 @@ if (defined("GELANG") === false) {
     <div class="row">
         <div class="col col-4"></div>
         <div class="col col-1">
+            <p class="profil-title">Status</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['nm_role']; ?></p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
             <a href="?page=edit&stat=3&id_user=<?php echo $_SESSION['id_user']; ?>" class="btn btn-info btn-sm">Edit profil</a>
         </div>
         <div class="col col-7"></div>

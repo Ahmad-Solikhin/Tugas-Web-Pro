@@ -4,6 +4,7 @@ if (defined("GELANG") === false) {
 }
 
 $nama = filter_data($_POST['nama']);
+$id_role = filter_data($_POST['id_role']);
 $username = filter_data($_POST['username']);
 $password = filter_data($_POST['password']);
 $usia = filter_data($_POST['usia']);
@@ -37,6 +38,7 @@ if ($password != $konfirmasi_password) {
 } else {
     $data = [
         'nm_user' => $nama,
+        'id_role' => $id_role,
         'user_username' => $username,
         'user_password' => sha1($password),
         'created_at' => $waktu,

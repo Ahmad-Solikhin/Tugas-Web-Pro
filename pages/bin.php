@@ -10,6 +10,8 @@ $coba = mysqli_fetch_assoc($hasil);
 
 if ($coba != null) {
 
+    $is_allow = cek_akses($connection, $_SESSION['id_role'], 'restore');
+
 
 ?>
     <h1 class="judul">Tabel Bin Kalori</h1>
@@ -22,7 +24,9 @@ if ($coba != null) {
                 <th>Kalori</th>
                 <th>Jam Makan</th>
                 <th>Tanggal</th>
-                <th class="text-center">Aksi</th>
+                <?php if ($is_allow) : ?>
+                    <th class="text-center">Aksi</th>
+                <?php endif; ?>
             </tr>
 
             <?php
@@ -42,9 +46,11 @@ if ($coba != null) {
                 $total += $row['kalori_makanan'];
                 $no++;
             ?>
-                <td style="text-align: center;">
-                    <a href="?page=restore&id_data=<?php echo $row['id_data'] ?>&stat=1" class="btn btn-info btn-sm">Restore</a>
-                </td>
+                <?php if ($is_allow) : ?>
+                    <td style="text-align: center;">
+                        <a href="?page=restore&id_data=<?php echo $row['id_data'] ?>&stat=1" class="btn btn-info btn-sm">Restore</a>
+                    </td>
+                <?php endif; ?>
                 </tr>
         <?php
             }
