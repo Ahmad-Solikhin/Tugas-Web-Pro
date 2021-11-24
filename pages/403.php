@@ -4,4 +4,4 @@ if (defined("GELANG") === false) {
 }
 ?>
 
-<h1 class="judul">Anda Tidak Memiliki Hak Akses</h1>
+<h1 class="judul">You Don't Have Permited!!!</h1>

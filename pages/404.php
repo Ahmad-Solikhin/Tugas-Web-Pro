@@ -4,4 +4,4 @@ if (defined("GELANG") === false) {
 }
 ?>
 
-<h1 class="judul">Ngapain Gayn</h1>
+<h1 class="judul">Page Not Found!!!</h1>

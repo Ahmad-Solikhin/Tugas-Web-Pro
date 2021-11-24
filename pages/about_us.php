@@ -5,40 +5,64 @@ if (defined("GELANG") === false) {
 ?>
 
 <h1 class="judul">Kelompk 5</h1>
-<div class="constructor-fluid">
-    <div class="row about-us">
-        <div class="col-2"></div>
-        <div class="col-4">Foto 1</div>
-        <div class="col-4">Foto 2</div>
-        <div class="col-2"></div>
+<div class="content">
+    <div class="constructor-fluid">
+        <div class="row about-us">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <div class="card" style="text-align: center;">
+                    <img src="assets/img/profile.png" class="card-img-top gambar-profile" alt="foto error">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="text-align: center;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <br>
+        <div class="row about-us">
+            <div class="col-4">
+                <div class="card" style="text-align: center;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="text-align: center;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="text-align: center;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row about-us">
-        <div class="col-2"></div>
-        <div class="col-4">Ahmad</div>
-        <div class="col-4">Solikhin</div>
-        <div class="col-2"></div>
-    </div>
-    <div class="row about-us">
-        <div class="col-2"></div>
-        <div class="col-4">4611419029</div>
-        <div class="col-4">NIM 2</div>
-        <div class="col-2"></div>
-    </div>
-    <br>
-    <div class="row about-us">
-        <div class="col-4">Foto 3</div>
-        <div class="col-4">Foto 4</div>
-        <div class="col-4">Foto 5</div>
-    </div>
-    <div class="row about-us">
-        <div class="col-4">Gayuh</div>
-        <div class="col-4">Raharjo</div>
-        <div class="col-4">Nama 5</div>
-    </div>
-    <div class="row about-us">
-        <div class="col-4">NIM 3</div>
-        <div class="col-4">NIM 4</div>
-        <div class="col-4">NIM 5</div>
-    </div>
-</div>
 </div>

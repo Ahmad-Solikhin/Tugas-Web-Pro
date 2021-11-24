@@ -22,13 +22,13 @@ if (defined("GELANG") === false) {
         <div class="mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Maknan</label>
             <div class="col">
-                <input type="text" name="nama_makanan" class="form-control">
+                <input type="text" name="nama_makanan" class="form-control" autocomplete="off">
             </div>
         </div>
         <div class="mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Jumlah Kalori</label>
             <div class="col">
-                <input type="text" name="kalori_makanan" class="form-control" placeholder="Kal">
+                <input type="text" name="kalori_makanan" class="form-control" placeholder="Kal" autocomplete="off">
             </div>
         </div>
         <div class="mb-3">
