@@ -1,6 +1,5 @@
 .profil-title {
   color: white;
-  padding-bottom: 10px;
   font-weight: bold;
 }
 
@@ -18,9 +17,4 @@
   text-align: center;
   color: white;
   padding-bottom: 10px;
-}
-
-.gambar-profile {
-  width: 10px;
-  height: 10px;
 }

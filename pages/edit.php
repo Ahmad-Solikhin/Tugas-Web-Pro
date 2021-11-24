@@ -30,15 +30,15 @@ if (isset($_GET['stat'])) {
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Maknan</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Makanan</label>
                     <div class="col">
-                        <input type="text" name="nama_makanan" class="form-control" value="<?php echo $row['nama_makanan']; ?>">
+                        <input type="text" name="nama_makanan" class="form-control" value="<?php echo $row['nama_makanan']; ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Jumlah Kalori</label>
                     <div class="col">
-                        <input type="text" name="kalori_makanan" class="form-control" value="<?php echo $row['kalori_makanan']; ?>">
+                        <input type="text" name="kalori_makanan" class="form-control" value="<?php echo $row['kalori_makanan']; ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3">
@@ -87,13 +87,13 @@ if (isset($_GET['stat'])) {
                 <div class="mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Olahraga</label>
                     <div class="col">
-                        <input type="text" name="nama_olahraga" class="form-control" value="<?php echo $row['nama_olahraga']; ?>">
+                        <input type="text" name="nama_olahraga" class="form-control" value="<?php echo $row['nama_olahraga']; ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Kalori Terbakar</label>
                     <div class="col">
-                        <input type="text" name="kalori_olahraga" class="form-control" value="<?php echo $row['kalori_olahraga']; ?>">
+                        <input type="text" name="kalori_olahraga" class="form-control" value="<?php echo $row['kalori_olahraga']; ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-3">
@@ -140,25 +140,25 @@ if (isset($_GET['stat'])) {
                             <div class="mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Nama</label>
                                 <div class="col">
-                                    <input type="text" name="nm_user" class="form-control" value="<?php echo $row['nm_user']; ?>">
+                                    <input type="text" name="nm_user" class="form-control" value="<?php echo $row['nm_user']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Username</label>
                                 <div class="col">
-                                    <input type="text" name="user_username" class="form-control" value="<?php echo $row['user_username']; ?>">
+                                    <input type="text" name="user_username" class="form-control" value="<?php echo $row['user_username']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Usia</label>
                                 <div class="col">
-                                    <input type="text" name="usia" class="form-control" value="<?php echo $row['usia']; ?>">
+                                    <input type="text" name="usia" class="form-control" value="<?php echo $row['usia']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Berat</label>
                                 <div class="col">
-                                    <input type="text" name="berat_badan" class="form-control" value="<?php echo $row['berat_badan']; ?>">
+                                    <input type="text" name="berat_badan" class="form-control" value="<?php echo $row['berat_badan']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="mb-3">

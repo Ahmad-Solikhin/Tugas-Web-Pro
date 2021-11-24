@@ -102,7 +102,7 @@ if ($file_to_open == "pages/welcome") {
         Tip 2: you can also add an image using data-image tag
     -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="?page=welcome" class="simple-text logo-normal">
                     KalorMan
                 </a>
             </div>
