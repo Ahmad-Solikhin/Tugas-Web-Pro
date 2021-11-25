@@ -53,6 +53,16 @@ if (defined("GELANG") === false) {
     <div class="row">
         <div class="col col-4"></div>
         <div class="col col-1">
+            <p class="profil-title">Tinggi Badan</p>
+        </div>
+        <div class="col col-3">
+            <p class="profile-child">: <?php echo $_SESSION['tinggi_badan']; ?> CM</p>
+        </div>
+        <div class="col col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-1">
             <p class="profil-title">Berat Badan</p>
         </div>
         <div class="col col-3">

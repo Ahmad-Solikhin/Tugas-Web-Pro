@@ -18,7 +18,8 @@ if (isset($_GET['stat'])) {
             'nama_makanan' => $nama_makanan,
             'kalori_makanan' => $kalori_makanan,
             'waktu' => $waktu,
-            'tanggal' => $tanggal
+            'tanggal' => $tanggal,
+            'id_user' => $_SESSION['id_user']
         ];
 
         insert_data($connection, "data", $data);
@@ -37,7 +38,8 @@ if (isset($_GET['stat'])) {
             'nama_olahraga' => $nama_olahraga,
             'kalori_olahraga' => $kalori_olahraga,
             'waktu' => $waktu,
-            'tanggal' => $tanggal
+            'tanggal' => $tanggal,
+            'id_user' => $_SESSION['id_user']
         ];
 
         insert_data($connection, "olahraga", $data);

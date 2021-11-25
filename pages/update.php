@@ -55,6 +55,7 @@ if (isset($_GET['stat'])) {
         $user_username = filter_data($_POST['user_username']);
         $usia = filter_data($_POST['usia']);
         $berat_badan = filter_data($_POST['berat_badan']);
+        $tinggi_badan = filter_data($_POST['tinggi_badan']);
         date_default_timezone_set('Asia/Jakarta');
         $waktu = date("Y-m-d H:i:s");
 
@@ -64,6 +65,7 @@ if (isset($_GET['stat'])) {
             'user_username' => $user_username,
             'usia' => $usia,
             'berat_badan' => $berat_badan,
+            'tinggi_badan' => $tinggi_badan,
             'update_at' => $waktu
         ];
 

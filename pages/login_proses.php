@@ -28,6 +28,7 @@ if (isset($_GET['stat'])) {
             $_SESSION['username'] = $row['user_username'];
             $_SESSION['usia'] = $row['usia'];
             $_SESSION['berat_badan'] = $row['berat_badan'];
+            $_SESSION['tinggi_badan'] = $row['tinggi_badan'];
             $_SESSION['id_role'] = $row['id_role'];
 
             $sql = "SELECT * FROM role WHERE id_role=" . $row['id_role'] . " AND deleted_at IS NULL";
@@ -61,6 +62,7 @@ if (isset($_GET['stat'])) {
             $_SESSION['username'] = $row['user_username'];
             $_SESSION['usia'] = $row['usia'];
             $_SESSION['berat_badan'] = $row['berat_badan'];
+            $_SESSION['tinggi_badan'] = $row['tinggi_badan'];
             $_SESSION['id_role'] = $row['id_role'];
 
             $sql = "SELECT * FROM role WHERE id_role=" . $row['id_role'] . " AND deleted_at IS NULL";

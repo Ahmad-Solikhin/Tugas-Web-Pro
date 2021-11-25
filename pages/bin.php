@@ -2,8 +2,8 @@
 if (defined("GELANG") === false) {
     die("Anda tidak berhak membuka file ini secara langsung");
 }
-
-$sql = "SELECT * FROM data WHERE delete_stat='1'";
+$id_user = $_SESSION['id_user'];
+$sql = "SELECT * FROM data WHERE delete_stat='1' AND id_user=$id_user";
 
 $hasil = mysqli_query($connection, $sql);
 $coba = mysqli_fetch_assoc($hasil);

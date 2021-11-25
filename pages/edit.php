@@ -11,7 +11,8 @@ if (isset($_GET['stat'])) {
     if ($stat == 1) {
         echo '<h1 class="judul">Edit Data</h1>';
         $id_data = $_GET['id_data'];
-        $sql = "select * from data where id_data=$id_data";
+        $id_user = $_SESSION['id_user'];
+        $sql = "select * from data where id_data=$id_data and id_user=$id_user";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
 ?>
@@ -65,7 +66,8 @@ if (isset($_GET['stat'])) {
     } elseif ($stat == 2) {
         echo '<h1 class="judul">Edit Data</h1>';
         $id_olahraga = $_GET['id_olahraga'];
-        $sql = "select * from olahraga where id_olahraga=$id_olahraga";
+        $id_user = $_SESSION['id_user'];
+        $sql = "select * from olahraga where id_olahraga=$id_olahraga and id_user=$id_user";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
 
@@ -153,6 +155,12 @@ if (isset($_GET['stat'])) {
                                 <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Usia</label>
                                 <div class="col">
                                     <input type="text" name="usia" class="form-control" value="<?php echo $row['usia']; ?>" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label profil-title">Tinggi</label>
+                                <div class="col">
+                                    <input type="text" name="tinggi_badan" class="form-control" value="<?php echo $row['tinggi_badan']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="mb-3">
