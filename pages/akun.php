@@ -6,8 +6,8 @@ if (defined("GELANG") === false) {
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col col-11">
-            <h1 class="judul">Selamat Datang BRO</h1>
+        <div class="col col-11" style="text-align: center;">
+            <img src="assets/img/profile.png" alt="foto error" class="akun">
             <?php
             if (isset($_GET['err'])) {
                 $err = $_GET['err'];

@@ -153,41 +153,36 @@ if (defined("GELANG") === false) {
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
-        <!-- Navigasi -->
-        <?php if ($hal_kal > $hal_ol) : ?>
-            <?php if ($hal_aktif > 1) : ?>
-                <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif - 1 ?>" class=" btn btn-sm btn-primary">Previous</a>
-            <?php endif; ?>
-            <?php for ($i = 1; $i <= $hal_kal; $i++) : ?>
-                <?php if ($i == $hal_aktif) : ?>
-                    <a style="font-weight: bold; color:#913f9e" href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
-                <?php else : ?>
-                    <a href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
-                <?php endif; ?>
-            <?php endfor ?>
-            <?php if ($hal_aktif < $hal_kal) : ?>
-                <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif + 1 ?>" class=" btn btn-sm btn-primary">Next</a>
-            <?php endif; ?>
-        <?php else : ?>
-            <?php if ($hal_aktif > 1) : ?>
-                <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif - 1 ?>" class=" btn btn-sm btn-primary">Previous</a>
-            <?php endif; ?>
-            <?php for ($i = 1; $i <= $hal_ol; $i++) : ?>
-                <?php if ($i == $hal_aktif) : ?>
-                    <a style="font-weight: bold; color:#913f9e" href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
-                <?php else : ?>
-                    <a href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
-                <?php endif; ?>
-            <?php endfor ?>
-            <?php if ($hal_aktif < $hal_ol) : ?>
-                <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif + 1 ?>" class=" btn btn-sm btn-primary">Next</a>
-            <?php endif; ?>
+    <!-- Navigasi -->
+    <?php if ($hal_kal > $hal_ol) : ?>
+        <?php if ($hal_aktif > 1) : ?>
+            <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif - 1 ?>" class=" btn btn-sm btn-primary">Previous</a>
         <?php endif; ?>
-    </div>
-</div>
-<div class="row">
-    <div class="col col-12">
-        <h3 style="text-align: center; color:white;">Total Kalori Keseluruhan Adalah : <b><?php echo $total_kal - $total_ol ?></b> Kalori</h3>
-    </div>
+        <?php for ($i = 1; $i <= $hal_kal; $i++) : ?>
+            <?php if ($i == $hal_aktif) : ?>
+                <a style="font-weight: bold; color:#913f9e" href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
+            <?php else : ?>
+                <a href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
+            <?php endif; ?>
+        <?php endfor ?>
+        <?php if ($hal_aktif < $hal_kal) : ?>
+            <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif + 1 ?>" class=" btn btn-sm btn-primary">Next</a>
+        <?php endif; ?>
+    <?php else : ?>
+        <?php if ($hal_aktif > 1) : ?>
+            <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif - 1 ?>" class=" btn btn-sm btn-primary">Previous</a>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $hal_ol; $i++) : ?>
+            <?php if ($i == $hal_aktif) : ?>
+                <a style="font-weight: bold; color:#913f9e" href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
+            <?php else : ?>
+                <a href="?page=tabel_kombinasi&hal=<?php echo $i ?>"><?php echo $i ?></a>
+            <?php endif; ?>
+        <?php endfor ?>
+        <?php if ($hal_aktif < $hal_ol) : ?>
+            <a href="?page=tabel_kombinasi&hal=<?php echo $hal_aktif + 1 ?>" class=" btn btn-sm btn-primary">Next</a>
+        <?php endif; ?>
+    <?php endif; ?>
+    <br>
+    <h3 style="text-align: center; color:white;">Total Kalori Keseluruhan Adalah : <b><?php echo $total_kal - $total_ol ?></b> Kalori</h3>
 </div>

@@ -258,7 +258,7 @@ if ($file_to_open == "pages/welcome") {
                     </nav>
                     <div class="copyright float-right" id="date">
                         , made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank"> Kelompok 5</a>
+                        <a href="?page=about_us"> Kelompok 5</a>
                     </div>
                 </div>
             </footer>

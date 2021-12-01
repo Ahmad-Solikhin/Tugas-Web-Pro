@@ -12,6 +12,13 @@ function cek_akses($koneksi, $id_role, $action)
     return false;
 }
 
+function indeks_count($berat, $tinggi)
+{
+    $tinggi = $tinggi / 100;
+    $indeks = $berat / ($tinggi * $tinggi);
+    return $indeks;
+}
+
 function insert_data($koneksi, $nama_tabel, $data)
 {
     $col = [];
