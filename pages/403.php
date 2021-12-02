@@ -4,4 +4,4 @@ if (defined("GELANG") === false) {
 }
 ?>
 
-<h1 class="judul">You Don't Have Permited!!!</h1>
+<h1 class="judul">You Not Permited!!!</h1>

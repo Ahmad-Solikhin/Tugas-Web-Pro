@@ -83,6 +83,7 @@ if (defined("GELANG") === false) {
         <div class="col-4"></div>
         <div class="col-4">
             <p style="color:white;">Hasil nilai IMT Anda adalah : <b><?php echo round($nilai, 2); ?></b></p>
+            <p style="color:white;">Anda dinyatakan : <b><?php echo cek_imt($nilai); ?></b></p>
         </div>
         <div class="col-4"></div>
     </div>

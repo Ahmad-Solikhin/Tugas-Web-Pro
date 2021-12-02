@@ -19,6 +19,22 @@ function indeks_count($berat, $tinggi)
     return $indeks;
 }
 
+function cek_imt($nilai)
+{
+    $imt = null;
+    if ($nilai < 18.5) {
+        $imt = "UNDERWEIGHT";
+    } elseif ($nilai >= 18.5 && $nilai <= 25) {
+        $imt = "NORMAL";
+    } elseif ($nilai >= 25.1 && $nilai <= 27) {
+        $imt = "OVERWEIGHT";
+    } elseif ($nilai > 27) {
+        $imt = "OBESITAS";
+    }
+
+    return $imt;
+}
+
 function insert_data($koneksi, $nama_tabel, $data)
 {
     $col = [];

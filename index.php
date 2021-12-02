@@ -90,7 +90,7 @@ if ($file_to_open == "pages/welcome") {
     <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/demo/demo.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="dark-edition">
