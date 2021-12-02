@@ -94,7 +94,8 @@ if ($baris1 > $baris2) {
     $sheet->setCellValue("H" . $baris2, "Total Kalori Terbakar : " . $total_ol);
     $sheet->setCellValue("F" . $baris2 + 1, "Total Kalori : " . $total_kal - $total_ol);
 }
+$nama = $_SESSION['nm_user'];
 $writer = new Xlsx($spreadsheet);
-$writer->save('Kombinasi.xlsx');
+$writer->save("Kombinasi $nama.xlsx");
 
 redirect('?page=tabel_kombinasi');
