@@ -186,3 +186,4 @@ if (defined("GELANG") === false) {
     <br>
     <h3 style="text-align: center; color:white;">Total Kalori Keseluruhan Adalah : <b><?php echo $total_kal - $total_ol ?></b> Kalori</h3>
 </div>
+<a href="?page=excel" class="btn btn-success btn-sm">Export Excel</a>
