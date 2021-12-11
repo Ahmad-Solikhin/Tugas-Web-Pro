@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 11:33 AM
+-- Generation Time: Dec 11, 2021 at 08:59 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -158,7 +158,7 @@ CREATE TABLE `user` (
   `update_at` datetime NOT NULL,
   `usia` int(11) DEFAULT NULL,
   `berat_badan` int(11) DEFAULT NULL,
-  `tinggi_badan` int(11) NOT NULL
+  `tinggi_badan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -166,8 +166,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nm_user`, `id_role`, `user_username`, `user_password`, `deleted_at`, `created_at`, `update_at`, `usia`, `berat_badan`, `tinggi_badan`) VALUES
-(1, 'Ahmad Solikhin ', 1, 'Asgr01', '0364cdbc771133323bb211ec8980e715a8d772f4', NULL, '2021-11-17 18:12:17', '2021-12-02 16:01:34', 20, 90, 175),
-(2, 'Ahmad Solikhin Gayuh Raharjo', 2, 'Asgr02', '0364cdbc771133323bb211ec8980e715a8d772f4', NULL, '2021-11-19 13:28:04', '2021-12-01 17:28:32', 20, 85, 178);
+(1, 'Ahmad Solikhin ', 1, 'Asgr01', '0364cdbc771133323bb211ec8980e715a8d772f4', NULL, '2021-11-17 18:12:17', '2021-12-11 14:50:27', 21, 90, 175),
+(2, 'Ahmad Solikhin Gayuh Raharjo', 2, 'Asgr02', '0364cdbc771133323bb211ec8980e715a8d772f4', NULL, '2021-11-19 13:28:04', '2021-12-01 17:28:32', 20, 85, 178),
+(15, 'Budi Susanto', 2, 'Busan', '983fbb2473308653cfffe7b945ace43d7b46a61a', NULL, '2021-12-02 21:41:49', '2021-12-02 21:46:20', 18, 80, 180);
 
 --
 -- Indexes for dumped tables
@@ -235,7 +236,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
