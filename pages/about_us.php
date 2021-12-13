@@ -44,7 +44,6 @@ if (defined("GELANG") === false) {
                     <div class="card-body">
                         <h5 class="card-title profil-title">Faisal Muhammad Audito Andrian</h5>
                         <p class="card-text profile-child">4611419014</p>
-                        <p class="profil-title" style="color: red;">Tidak Mengerjakan dan Tidak Membantu</p>
                     </div>
                 </div>
             </div>
