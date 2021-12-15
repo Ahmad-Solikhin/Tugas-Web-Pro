@@ -103,7 +103,8 @@ if ($file_to_open == "pages/welcome") {
     -->
             <div class="logo">
                 <a href="?page=welcome" class="simple-text logo-normal">
-                    KalorMan
+                    Kalorman
+                    <!-- <img src="assets/img/logo.png" alt="Logo Kalorman"> Logo Masih Error -->
                 </a>
             </div>
 
